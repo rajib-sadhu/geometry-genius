@@ -4,16 +4,120 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Assignment 5 - Geometry Genius</title>
 </head>
 <body>
     
-    <h1>Hello World</h1>
+
+    <!-- navbar header -->
+    <header class="w-full bg-[#8ed5ff] flex justify-between md:px-8 px-2 py-3 fixed">
+        <!-- website name -->
+        <div>
+            <h1 class="md:text-2xl text-lg font-bold">Interactive</h1>
+            <p class="md:text-lg text-sm">Geometry Genius</p>
+        </div>
+        <!-- Blog site anchor tag -->
+        <div class="my-auto">
+            <a class="text-lg bg-[#1090D8] hover:bg-[#0c5f90] text-white px-5 py-1 rounded-md" href="./pages/blog.html" target="_blank" >Blog</a>
+        </div>
+    </header>
+
+
+    <!-- main section -->
+    <main class="grid md:grid-cols-4 grid-cols-2 gap-2 md:py-28 py-20 px-5">
+
+        <!-- Shape Section -->
+        <section class="md:col-span-3 grid md:grid-cols-3 grid-cols-1 gap-4">
+        <!-- Triangle -->
+         <div class="text-center shadow-xl md:p-8 p-2 h-auto space-y-5">
+            <img class="mx-auto" src="images/triangle.png" alt="">
+
+            <h3 class="text-xl font-semibold">Triangle</h3>
+            <p>Area (A) = 0.5 x b x h</p>
+            <input class="w-20 bg-slate-200 px-2" type="text" placeholder="b"> cm
+            <input class="w-20 bg-slate-200 px-2 ml-2" type="text" placeholder="h"> cm
+            <button class="block mx-auto bg-[#1090D8] text-white w-full py-1 rounded-md font-semibold hover:bg-[#0a659a]">Calculate</button>
+         </div>
+        <!-- Rectangle  -->
+        <div class="text-center shadow-xl md:p-8 p-2 h-auto space-y-5">
+            <img class="mx-auto" src="images/rectangle.png" alt="">
+
+            <h3 class="text-xl font-semibold">Rectangle</h3>
+            <p>Area (A) = w x l</p>
+            <input class="w-20 bg-slate-200 px-2" type="text" placeholder="w"> cm
+            <input class="w-20 bg-slate-200 px-2 ml-2" type="text" placeholder="l"> cm
+            <button class="block mx-auto bg-[#1090D8] text-white w-full py-1 rounded-md font-semibold hover:bg-[#0a659a]">Calculate</button>
+         </div>
+         <!-- Parallelogram -->
+         <div class="text-center shadow-xl md:p-8 p-2 h-auto space-y-5">
+            <img class="mx-auto" src="images/parallelogram.png" alt="">
+
+            <h3 class="md:text-xl font-semibold">Parallelogram</h3>
+            <p>Area (A) = b x h</p>
+            <input class="w-20 bg-slate-200 px-2" type="text" placeholder="b"> cm
+            <input class="w-20 bg-slate-200 px-2 ml-2" type="text" placeholder="h"> cm
+            <button class="block mx-auto bg-[#1090D8] text-white w-full py-1 rounded-md font-semibold hover:bg-[#0a659a]">Calculate</button>
+         </div>
+         <!-- Rhombus -->
+         <div class="text-center shadow-xl md:p-8 p-2 h-auto space-y-5">
+            <img class="mx-auto" src="images/rhombus.png" alt="">
+
+            <h3 class="text-xl font-semibold">Rhombus</h3>
+            <p>Area (A) = 0.5 x d<sub>1</sub> x d<sub>2</sub> </p>
+            <input class="w-20 bg-slate-200 px-2" type="text" placeholder="d1"> cm
+            <input class="w-20 bg-slate-200 px-2 ml-2" type="text" placeholder="d2"> cm
+            <button class="block mx-auto bg-[#1090D8] text-white w-full py-1 rounded-md font-semibold hover:bg-[#0a659a]">Calculate</button>
+         </div>
+         <!-- Pentagon -->
+         <div class="text-center shadow-xl md:p-8 p-2 h-auto space-y-5">
+            <img class="mx-auto" src="images/pentagon.png" alt="">
+
+            <h3 class="text-xl font-semibold">Pentagon</h3>
+            <p>Area (A) = 0.5 x p x b </p>
+            <input class="w-20 bg-slate-200 px-2" type="text" placeholder="p"> cm
+            <input class="w-20 bg-slate-200 px-2 ml-2" type="text" placeholder="b"> cm
+            <button class="block mx-auto bg-[#1090D8] text-white w-full py-1 rounded-md font-semibold hover:bg-[#0a659a]">Calculate</button>
+         </div>
+         <!-- Ellipse -->
+         <div class="text-center shadow-xl md:p-8 p-2 h-auto space-y-5">
+            <img class="mx-auto" src="images/ellipse.png" alt="">
+
+            <h3 class="text-xl font-semibold">Ellipse</h3>
+            <p>Area (A) = π x a x b </p>
+            <input class="w-20 bg-slate-200 px-2" type="text" placeholder="a"> cm
+            <input class="w-20 bg-slate-200 px-2 ml-2" type="text" placeholder="b"> cm
+            <button class="block mx-auto bg-[#1090D8] text-white w-full py-1 rounded-md font-semibold hover:bg-[#0a659a]">Calculate</button>
+         </div>
+        </section>
+        
+        <!-- Area Calculation Section -->
+        <section class="col-span-1 h-full md:w-1/4 w-1/2 fixed right-0 md:pr-5">
+            <!-- Title -->
+            <div class="text-center font-semibold underline md:text-lg text-sm">
+                <h1>Area Calculation</h1>
+            </div>
+            <!--Each Shape Calculate value -->
+            <div class="text-center mt-5">
+                <div class="md:flex justify-around md:space-y-0 space-y-2">
+                    <h2>1. Triangle</h2>
+                    <h3>12cm<sup>2</sup></h3>
+                    <button>Convert to m<sup>2</sup></button>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <div class="md:flex justify-around md:space-y-0 space-y-2">
+                    <h2>2. Ellipse</h2>
+                    <h3>125.60cm<sup>2</sup></h3>
+                    <button>Convert to m<sup>2</sup></button>
+                </div>
+            </div>
+        </section>
+    </main>
 
 
 
-    <script src="./script.js"></script>
+    <script src="JS/script.js"></script>
 </body>
 </html>
