@@ -3,3 +3,6 @@ tailwind.config.js
 
 # figma file
 geometry_genius.fig
+
+# Surge Hosting File
+CNAME
