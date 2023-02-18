@@ -165,7 +165,7 @@ document.getElementById('ellipse-btn').addEventListener('click', function(){
 
 
 
-// random color
+// random color generator
 var menuBoxes = document.getElementsByClassName('randomColor');
 for (var i = 0; i < menuBoxes.length; i++) {
     menuBoxes[i].onmouseenter = function(e) {
@@ -196,37 +196,68 @@ function showOutput(a, name){
     
     // Create Elements
     const area = document.createElement('div');
-
     area.innerHTML = `
     
             <div class="md:flex justify-around md:space-y-0 space-y-2 md:text-sm text-lg">
                 <h2> ${increment()} . ${name}</h2>
-                <h3>${a}cm<sup>2</sup></h3>
-                <button class="bg-sky-500 hover:bg-sky-700 text-white py-1 px-2 rounded-sm">Convert to m<sup>2</sup></button>
-                <button class="remove-btn text-red-500 md:text-lg text-2xl md:pl-0 pl-3"><i class="fa-solid fa-xmark"></i></button>
+                <h3><span>${a}</span><span>cm</span><sup>2</sup></h3>
+                <button class="convert-btn bg-sky-500 hover:bg-sky-700 text-white py-1 px-2 rounded-sm" title="convert to meter">Convert to m<sup>2</sup></button>
+                <button class="remove-btn text-red-500 md:text-lg text-2xl md:pl-0 pl-3" title="remove"><i class="fa-solid fa-xmark"></i></button>
             </div>`;
     
     calculationArea.appendChild(area);
 
 
 
+
+
+
+
+    /*----------------------- Bonus Section ----------------------- */
+
+
+    
     // Remove each Area calculation
     const remove = document.querySelectorAll('.remove-btn');
 
         for(const item of remove){
-            
-            console.log(remove)
+        
             item.addEventListener('click', function (event){
-
-                /* 1st method */
-                // cmntContainer.removeChild(p);
-                // event.stopImmediatePropagation();
-                
-                /* 2nd method */
                 event.target.parentNode.parentNode.remove(event.target);
-            })
-        }
+            });
+        };
 
+
+
+        
+    // Convert each area value from cm to m
+    const convert = document.querySelectorAll('.convert-btn');
+    for(const item of convert){
+        
+        item.addEventListener('click', function (event){
+            const cmValue = event.target.parentNode.childNodes[3].childNodes[0].innerText;
+            const cm = parseFloat(cmValue);
+            const m = cm * 0.01;
+
+            
+            const cm_m = event.target.parentNode.childNodes[3].childNodes[1].innerText;
+
+            const m_cm = m * 100 * 100;
+
+            console.log( event.target.parentNode.childNodes[5].innerText)
+
+            if(cm_m == 'cm'){
+                event.target.parentNode.childNodes[3].innerHTML=`<span>${m}</span><span>m</span><sup>2</sup>`;
+                event.target.parentNode.childNodes[5].innerHTML = `Convert to cm<sup>2</sup>`;
+            }
+            else{
+                event.target.parentNode.childNodes[3].innerHTML=`<span>${m_cm}</span><span>cm</span><sup>2</sup>`;
+                event.target.parentNode.childNodes[5].innerHTML = `Convert to m<sup>2</sup>`;
+            }
+
+        });
+    };
+    
 }
 
 
