@@ -189,6 +189,7 @@ var increment = (function(n) {
     }
   }(0));
 
+
 // Show Output in Calculation Area
 
 function showOutput(a, name){
@@ -219,7 +220,6 @@ function showOutput(a, name){
     
     // Remove each Area calculation
     const remove = document.querySelectorAll('.remove-btn');
-
         for(const item of remove){
         
             item.addEventListener('click', function (event){
@@ -241,8 +241,7 @@ function showOutput(a, name){
             const cmValue = event.target.parentNode.childNodes[3].childNodes[0].innerText;
             const cm = parseFloat(cmValue);
             const m = cm * 0.01;
-
-            
+   
             const cm_m = event.target.parentNode.childNodes[3].childNodes[1].innerText;
 
             const m_cm = m * 100 * 100;
@@ -257,7 +256,6 @@ function showOutput(a, name){
                 event.target.parentNode.childNodes[3].innerHTML=`<span>${m_cm}</span><span>cm</span><sup>2</sup>`;
                 event.target.parentNode.childNodes[5].innerHTML = `Convert to m<sup>2</sup>`;
             }
-
         });
     };
     
