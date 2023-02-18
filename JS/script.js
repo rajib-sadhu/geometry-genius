@@ -168,10 +168,15 @@ document.getElementById('ellipse-btn').addEventListener('click', function(){
 // random color
 var menuBoxes = document.getElementsByClassName('randomColor');
 for (var i = 0; i < menuBoxes.length; i++) {
-    menuBoxes[i].onmouseover = function(e) {
+    menuBoxes[i].onmouseenter = function(e) {
         var color = '#'+Math.floor(Math.random()*16777215).toString(16);
-
         this.style.backgroundColor = color;
+        this.style.borderRadius = '20px';
+    }
+    menuBoxes[i].onmouseleave = function(e) {
+
+        this.style.backgroundColor = '';
+        this.style.borderRadius = '0px';
     }
 }
 
