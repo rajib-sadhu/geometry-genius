@@ -229,12 +229,15 @@ function showOutput(a, name){
 
 
 
-        
+
     // Convert each area value from cm to m
     const convert = document.querySelectorAll('.convert-btn');
     for(const item of convert){
         
         item.addEventListener('click', function (event){
+
+            event.stopImmediatePropagation();
+
             const cmValue = event.target.parentNode.childNodes[3].childNodes[0].innerText;
             const cm = parseFloat(cmValue);
             const m = cm * 0.01;
