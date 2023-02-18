@@ -194,17 +194,25 @@ var increment = (function(n) {
 function showOutput(a, name){
     const calculationArea =  document.getElementById('calculation-area');
     
+    // Create Elements
     const area = document.createElement('div');
 
     area.innerHTML = `
     
-            <div class="md:flex justify-around md:space-y-0 space-y-2 text-xs">
+            <div class="md:flex justify-around md:space-y-0 space-y-2 md:text-sm text-lg">
                 <h2> ${increment()} . ${name}</h2>
                 <h3>${a}cm<sup>2</sup></h3>
                 <button class="bg-sky-500 hover:bg-sky-700 text-white py-1 px-2 rounded-sm">Convert to m<sup>2</sup></button>
-                <button class="text-red-500 text-lg md:pl-0 pl-2"><i class="fa-solid fa-xmark"></i></button>
+                <button id="remove-btn" class="text-red-500 md:text-lg text-2xl md:pl-0 pl-3"><i class="fa-solid fa-xmark"></i></button>
             </div>`;
     
     calculationArea.appendChild(area);
 }
 
+
+// Remove each Area calculation
+document.getElementById('remove-btn').addEventListener('click', function(){
+
+    
+
+})
