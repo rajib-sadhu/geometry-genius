@@ -203,16 +203,33 @@ function showOutput(a, name){
                 <h2> ${increment()} . ${name}</h2>
                 <h3>${a}cm<sup>2</sup></h3>
                 <button class="bg-sky-500 hover:bg-sky-700 text-white py-1 px-2 rounded-sm">Convert to m<sup>2</sup></button>
-                <button id="remove-btn" class="text-red-500 md:text-lg text-2xl md:pl-0 pl-3"><i class="fa-solid fa-xmark"></i></button>
+                <button class="remove-btn text-red-500 md:text-lg text-2xl md:pl-0 pl-3"><i class="fa-solid fa-xmark"></i></button>
             </div>`;
     
     calculationArea.appendChild(area);
+
+
+
+    // Remove each Area calculation
+    const remove = document.querySelectorAll('.remove-btn');
+
+        for(const item of remove){
+            
+            console.log(remove)
+            item.addEventListener('click', function (event){
+
+                /* 1st method */
+                // cmntContainer.removeChild(p);
+                // event.stopImmediatePropagation();
+                
+                /* 2nd method */
+                event.target.parentNode.parentNode.remove(event.target);
+            })
+        }
+
 }
 
 
-// Remove each Area calculation
-document.getElementById('remove-btn').addEventListener('click', function(){
 
-    
 
-})
+
