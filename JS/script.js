@@ -165,9 +165,15 @@ document.getElementById('ellipse-btn').addEventListener('click', function(){
 
 
 
+// random color
+var menuBoxes = document.getElementsByClassName('randomColor');
+for (var i = 0; i < menuBoxes.length; i++) {
+    menuBoxes[i].onmouseover = function(e) {
+        var color = '#'+Math.floor(Math.random()*16777215).toString(16);
 
-
-
+        this.style.backgroundColor = color;
+    }
+}
 
 
 
@@ -179,16 +185,16 @@ function showOutput(a, name){
     const calculationArea =  document.getElementById('calculation-area');
     
     const area = document.createElement('div');
+
     let i = 1;
     area.innerHTML = `
     
-            <div class="md:flex justify-around md:space-y-0 space-y-2">
+            <div class="md:flex justify-around md:space-y-0 space-y-2 ">
                 <h2> ${i} . ${name}</h2>
                 <h3>${a}cm<sup>2</sup></h3>
                 <button class="bg-sky-500 hover:bg-sky-700 md:text-sm text-xs text-white py-1 px-2 rounded-sm">Convert to m<sup>2</sup></button>
             </div>`;
     
     calculationArea.appendChild(area);
-
 }
 
