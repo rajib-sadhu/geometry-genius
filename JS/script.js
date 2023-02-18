@@ -198,10 +198,11 @@ function showOutput(a, name){
 
     area.innerHTML = `
     
-            <div class="md:flex justify-around md:space-y-0 space-y-2 ">
+            <div class="md:flex justify-around md:space-y-0 space-y-2 text-xs">
                 <h2> ${increment()} . ${name}</h2>
                 <h3>${a}cm<sup>2</sup></h3>
-                <button class="bg-sky-500 hover:bg-sky-700 md:text-sm text-xs text-white py-1 px-2 rounded-sm">Convert to m<sup>2</sup></button>
+                <button class="bg-sky-500 hover:bg-sky-700 text-white py-1 px-2 rounded-sm">Convert to m<sup>2</sup></button>
+                <button class="text-red-500 text-lg md:pl-0 pl-2"><i class="fa-solid fa-xmark"></i></button>
             </div>`;
     
     calculationArea.appendChild(area);
