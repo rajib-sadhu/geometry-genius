@@ -181,8 +181,13 @@ for (var i = 0; i < menuBoxes.length; i++) {
 }
 
 
-
-
+// increament index number of Area calculation
+var increment = (function(n) {
+    return function() {
+      n += 1;
+      return n;
+    }
+  }(0));
 
 // Show Output in Calculation Area
 
@@ -191,11 +196,10 @@ function showOutput(a, name){
     
     const area = document.createElement('div');
 
-    let i = 1;
     area.innerHTML = `
     
             <div class="md:flex justify-around md:space-y-0 space-y-2 ">
-                <h2> ${i} . ${name}</h2>
+                <h2> ${increment()} . ${name}</h2>
                 <h3>${a}cm<sup>2</sup></h3>
                 <button class="bg-sky-500 hover:bg-sky-700 md:text-sm text-xs text-white py-1 px-2 rounded-sm">Convert to m<sup>2</sup></button>
             </div>`;
